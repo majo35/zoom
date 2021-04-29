@@ -9,7 +9,9 @@ const handleError = (res = {}, err = {}) => {
     console.log(err)
   }
   // Sends error to user
-  res.status(err.code).json({
+  console.error('MY Respose: ', res)
+  console.error('my Error: ', err.code, err.message)
+  res.status(err.code || 500).json({
     errors: {
       msg: err.message
     }

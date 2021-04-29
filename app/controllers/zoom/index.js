@@ -6,6 +6,12 @@ const { updateMeeting } = require('./updateMeeting')
 const { deleteMeeting } = require('./deleteMeeting')
 const { getWebSignature } = require('./getWebSignature')
 const { notifications } = require('./notifications')
+const {
+  createUser,
+  listUsers,
+  deleteUser,
+  updateUserSettings
+} = require('./createUser')
 
 module.exports = {
   userInfo,
@@ -15,5 +21,9 @@ module.exports = {
   updateMeeting,
   deleteMeeting,
   getWebSignature,
-  notifications
+  notifications,
+  createUser,
+  listUsers,
+  deleteUser,
+  updateUserSettings
 }

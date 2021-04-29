@@ -10,7 +10,11 @@ const {
   updateMeeting,
   deleteMeeting,
   getWebSignature,
-  notifications
+  notifications,
+  createUser,
+  listUsers,
+  updateUserSettings,
+  deleteUser
 } = require('../controllers/zoom')
 const {
   validateUserInfo,
@@ -67,5 +71,13 @@ router.post(
 )
 
 router.post('/notifications', trimRequest.all, notifications)
+
+router.post('/users', trimRequest.all, createUser)
+
+router.get('/users', trimRequest.all, listUsers)
+
+router.patch('/users/:userId/settings', trimRequest.all, updateUserSettings)
+
+router.delete('/users/:userId', trimRequest.all, deleteUser)
 
 module.exports = router
